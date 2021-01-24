@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>人才库</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+hello world
+<input id="submit" type="button" value="提交">
+</body>
+
+<script type="text/javascript">
+ $("#submit").click(function(){
+	 var data = {};
+	 /* $.post('user/login', data, function(resultData){
+		 window.location.href= window.location.pathname + "main";
+	 }); */
+	 myPost('user/login',data,function(result){
+		 setToken(result.data.token);
+		 setRefreshToken(result.data.refreshToken);
+		 window.location.href= window.location.pathname + "main";
+	 });
+ });
+</script>
+</html>
