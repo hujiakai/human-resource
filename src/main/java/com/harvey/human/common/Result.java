@@ -1,21 +1,17 @@
 package com.harvey.human.common;
 
-import lombok.Data;
-
 /**
  * 返回数据结构
  * 
  * @author Harvey
  * @date 2020年12月28日
  */
-@Data
 public class Result <T>{
 	private int code;
 	
 	private String message;
 	
 	private T data;
-
 
 	@SuppressWarnings("rawtypes")
 	public static Result success(){
@@ -46,6 +42,30 @@ public class Result <T>{
 	public Result(ResultEnum resultEnum, T data) {
 		this.code = resultEnum.getCode();
 		this.message = resultEnum.getMessage();
+		this.data = data;
+	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
 		this.data = data;
 	}
 }

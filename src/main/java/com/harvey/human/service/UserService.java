@@ -1,8 +1,5 @@
 package com.harvey.human.service;
 
-import java.util.Calendar;
-import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
@@ -10,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.harvey.human.common.HumanConstant;
 import com.harvey.human.model.UserModel;
 import com.harvey.human.model.TokenModel;
-import com.harvey.human.service.TokenService;
 import com.harvey.human.util.CacacheUtils;
 
 /**

@@ -1,8 +1,5 @@
 package com.harvey.human.common;
 
-import lombok.Data;
-
-@Data
 public class BussinessException extends RuntimeException{
 	private static final long serialVersionUID = 8433723079694769042L;
 
@@ -19,5 +16,21 @@ public class BussinessException extends RuntimeException{
 	public BussinessException(ResultEnum resultEnum) {
 		this.code = resultEnum.getCode();
 		this.errorMsg = resultEnum.getMessage();
+	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 }
