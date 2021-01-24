@@ -5,8 +5,8 @@
 
 <generatorConfiguration>
 	<!-- <properties resource="application.properties" /> -->
-	<classPathEntry
-		location="D:\develop-tools\maven-repo\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar" />
+	<!-- <classPathEntry
+		location="D:\develop-tools\maven-repo\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar" /> -->
 	<context id="Tables" targetRuntime="MyBatis3">
 		<!-- 注释 -->
 		<commentGenerator>
@@ -17,10 +17,10 @@
 		</commentGenerator>
 
 		<!-- JDBC连接 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
-			connectionURL="jdbc:mysql://192.168.3.41:3306/saladb?useSSL=false&amp;nullNamePatternMatchesAll=true"
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" 
+			connectionURL="jdbc:mysql://192.168.0.201:3306/human?useSSL=false&amp;nullNamePatternMatchesAll=true&amp;serverTimezone=UTC"
 			userId="root"
-			password="abcd-1234">
+			password="123456">
 		</jdbcConnection>
 
 		<!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制 -->
@@ -33,7 +33,7 @@
 
 		<!-- 生成实体类地址 -->
 		<javaModelGenerator
-			targetPackage="com.harvey.human.model" targetProject="src/main/java">
+			targetPackage="com.harvey.human.model" targetProject="human-resource/src/main/java">
 			<!-- 从数据库返回的值被清理前后的空格 -->
 			<property name="trimStrings" value="true" />
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
@@ -42,7 +42,7 @@
 
 		<!-- 生成mapper xml文件 -->
 		<sqlMapGenerator targetPackage="mapper"
-			targetProject="src/main/resources">
+			targetProject="human-resource/src/main/resources">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
@@ -50,7 +50,7 @@
 		<!-- 生成mapper xml对应Client -->
 		<javaClientGenerator
 			targetPackage="com.harvey.human.dao"
-			targetProject="src/main/java" type="XMLMAPPER">
+			targetProject="human-resource/src/main/java" type="XMLMAPPER">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
@@ -59,15 +59,14 @@
 		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 
 			是否生成 example类 -->
 
-		<table schema="naxiaoxin-saladb" 
-			tableName="product_info"
-			domainObjectName="ProductInfo" 
+		<table schema="human" 
+			tableName="h_user"
+			domainObjectName="User" 
 			enableCountByExample="false"
 			enableDeleteByExample="false" 
-			enableSelectByExample="true"
-			enableUpdateByExample="true"
-			selectByExampleQueryId="true"
-			enableInsert="true"
+			enableSelectByExample="false"
+			enableUpdateByExample="false"
+			selectByExampleQueryId="false"
 			enableDeleteByPrimaryKey="true">
 		</table>
 	</context>

@@ -3,45 +3,45 @@ package com.harvey.human.model;
 import com.harvey.human.base.BaseModel;
 
 public class UserModel extends BaseModel{
-	private static final long serialVersionUID = 4260260191087771342L;
+	private static final long serialVersionUID = 7792385737711277666L;
 
 	private String userName;
-	
-	private String mobile;
-	
-	private String password;
-	
-	private String salt;
 
-	public String getUserName() {
-		return userName;
-	}
+    private String mobile;
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    private String password;
 
-	public String getMobile() {
-		return mobile;
-	}
+    private String salt;
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public String getSalt() {
-		return salt;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
+    }
 
-	public void setSalt(String salt) {
-		this.salt = salt;
-	}
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt == null ? null : salt.trim();
+    }
 }
