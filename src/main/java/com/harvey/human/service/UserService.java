@@ -1,10 +1,14 @@
 package com.harvey.human.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.harvey.human.common.HumanConstant;
+import com.harvey.human.dao.UserMapper;
 import com.harvey.human.model.UserModel;
 import com.harvey.human.model.TokenModel;
 import com.harvey.human.util.CacacheUtils;
@@ -17,6 +21,12 @@ import com.harvey.human.util.CacacheUtils;
  */
 @Service
 public class UserService {
+	@Autowired
+	private UserMapper userMapper;
+	
+	public List<UserModel> find(){
+		return userMapper.findUserModels(new UserModel());
+	}
 	/**
 	 * 登录
 	 * 

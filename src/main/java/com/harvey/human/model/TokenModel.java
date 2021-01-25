@@ -1,8 +1,10 @@
 package com.harvey.human.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TokenModel {
+public class TokenModel implements Serializable{
+	private static final long serialVersionUID = 4029363888441876439L;
 
 	private String token;
 	

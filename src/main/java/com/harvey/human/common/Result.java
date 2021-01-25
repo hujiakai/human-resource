@@ -26,6 +26,12 @@ public class Result <T>{
 	public Result() {
 		super();
 	}
+	
+	public Result(T data) {
+		this.code = ResultEnum.SUCCESS.getCode();
+		this.message = ResultEnum.SUCCESS.getMessage();
+		this.data = data;
+	}
 
 	public Result(int code, String message, T data) {
 		super();

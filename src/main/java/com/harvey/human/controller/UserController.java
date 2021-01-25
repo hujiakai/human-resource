@@ -1,5 +1,7 @@
 package com.harvey.human.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,11 @@ public class UserController {
 	
 	@Autowired
 	private TokenService tokenService;
+	
+	@RequestMapping(value = "/find", method = RequestMethod.GET)
+	public Result<List<UserModel>> find(){
+		return new Result<List<UserModel>>(userService.find());
+	}
 	
 	/**
 	 * 登录

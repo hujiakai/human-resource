@@ -1,17 +1,11 @@
 package com.harvey.human.dao;
 
+import java.util.List;
+
+import com.harvey.human.common.BaseMapper;
 import com.harvey.human.model.UserModel;
 
-public interface UserMapper {
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UserModel record);
-
-    int insertSelective(UserModel record);
-
-    UserModel selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(UserModel record);
-
-    int updateByPrimaryKey(UserModel record);
+public interface UserMapper extends BaseMapper{
+	
+    List<UserModel> findUserModels(UserModel user);
 }
